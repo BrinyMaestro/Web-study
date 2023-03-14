@@ -14,15 +14,56 @@
     <script>
         let 성민이키 = 179
         let 성민이체중 = 60
-        let 성민이BMI = 성민이체중 / (성민이키*성민이키)
+        let 성민이BMI = 성민이체중 / (성민이키/100 *성민이키/100)
         console.log("성민이의 BMI : ", 성민이BMI)
 
         let 은성이키 = 179
         let 은성이체중 = 76
+        let 은성이BMI = 은성이체중 / (은성이키/100 * 은성이키/100)
+        console.log("은성이BMI : ", 은성이BMI)
+        
 
         let 선생님키 = 188
         let 선생님체중 = 78
+        let 선생님BMI = 선생님체중 / (선생님키/100 * 선생님키/100)
+        console.log("선생님 BMI : ", 선생님BMI)
 
+        let 나의키 = 168
+        let 나의체중 = 58
+        let 나의BMI = 나의체중 / (나의키/100 * 나의키/100)
+        console.log("나의 BMI : ", 나의BMI)
+
+        let 태연이키 = 170
+        let 태연이체중 = 60
+        let 태연이BMI = 태연이체중 / (태연이키/100 * 태연이키/100)
+        console.log("태연이 BMI : ", 태연이BMI) 
+
+        // 함수 : 자주 쓰는 코드를 그룹으로 만들어두고, 필요할 때 편하게 쓰는 것
+        // 사용법 : 1.만든다   2.쓴다
+        function bmi계산( 키, 체중 ) { // 외부에서 키, 체중 가져옴
+            // 여기에 자주 쓰는 코드 집어넣음
+
+            // 키를 m 단위로 변환
+            let 변환한키 = 키/100
+
+            // 체중을 가져오기
+            
+            // bmi를 최종 계산
+            let bmi = 체중 / (변환한키 * 변환한키)
+
+            // console.log로 bmi를 알려줌
+            console.log(bmi)
+
+        }
+
+        console.log("성민이 bmi")
+        bmi계산(성민이키, 성민이체중) // 2. 함수 사용하기
+
+        console.log("은성이 bmi")
+        bmi계산(은성이키, 은성이체중)
+
+        console.log("나의 bmi")
+        bmi계산(나의키, 나의체중)
 
 
     </script>
