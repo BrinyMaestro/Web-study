@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트3 DOM</title>
+</head>
+<body>
+    <h1>제목으로 사용하는 h1태그</h1>
+    <p>본문의 내용으로 주로 사용하는 p태그</p>
+    <ul>
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+    </ul>
+
+
+    <script>
+        //Document Object Model
+
+        //기본원리 : 1. 원하는 태그 선택.    2. 선택한 태그를 조작함
+
+        let 선택한놈1
+        let 선택한놈2
+        선택한놈1 = document.querySelector("h1")
+        선택한놈2 = document.querySelector("p")
+
+        console.log(선택한놈1)
+        console.log(선택한놈2)
+
+        선택한놈1.style.color = "cyan"
+        선택한놈2.style.backgroundColor = "aquamarine"
+
+
+    </script>
+</body>
+</html>
