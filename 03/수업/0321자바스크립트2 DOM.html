@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2차시</title>
+</head>
+<body>
+    <h1>DOM 배우는 시간</h1>
+    <p>기본원리 1. 원하는 대상 선택</p>
+    <p>기본원리 2. 선택한 대상을 조작하기</p>
+    <hr>
+    <ul class="list">
+        <li class="li">리스트1</li>
+        <li class="li">리스트2</li>
+        <li class="li">리스트3</li>
+    </ul>
+    <div class="divbox">
+        <h1 id="h1">div에 들어있는 h1</h1>
+        <p id="p">div에 들어있는 p</p>
+    </div>
+
+    <script>
+        let 리스트지정
+        리스트지정 = document.querySelector(".list")
+        console.log(리스트지정)
+
+        let li태그지정
+        li태그지정 = document.querySelector(".li")
+        console.log(li태그지정)
+        // 중복되는 클래스는 맨위의 하나만 지정 가능함
+
+        let h1태그지정
+        h1태그지정 = document.querySelector("#h1")
+        console.log(h1태그지정)
+
+        리스트지정.style.backgroundColor = "red"
+        li태그지정.style.color = "white"
+        h1태그지정.style.textAlign = "center"
+    
+
+    </script>
+</body>
+</html>
