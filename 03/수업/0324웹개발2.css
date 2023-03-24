@@ -1,0 +1,30 @@
+* {margin: 0; padding: 0;}
+
+
+.font1 {
+    color: rgb(178, 136, 235);
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 20pt;
+    font-weight: 400;
+    line-height: 80px;
+    font-style: italic;
+}
+
+.font2 {
+    color: rgb(79, 176, 225);
+    font-family: 'Dokdo', cursive;
+    font-size: 15pt;
+    line-height: 5px;
+    text-shadow: 5px 5px 2px rgb(181, 216, 239);
+}
+
+.font3 {
+    color: rgb(255, 91, 50);
+    font-family: 'Kirang Haerang', cursive;
+    font-size: 10pt;
+    letter-spacing: 10px;
+}
+
+.list {
+    list-style-type: disc;
+}
