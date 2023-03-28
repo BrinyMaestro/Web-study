@@ -19,34 +19,38 @@
     <a href="">a태그 하나 아무거나</a>
 
     <table border="1">
-        <tr>
-            <td>1줄1칸</td>
-            <td>1줄2칸</td>
-            <td>1줄3칸</td>
-            <td>1줄4칸</td>
-            <td>1줄5칸</td>
-        </tr>
-        <tr>
-            <td>2줄1칸</td>
-            <td>2줄2칸</td>
-            <td>2줄3칸</td>
-            <td>2줄4칸</td>
-            <td>2줄5칸</td>
-        </tr>
-        <tr>
-            <td>3줄1칸</td>
-            <td>3줄2칸</td>
-            <td>3줄3칸</td>
-            <td>3줄4칸</td>
-            <td>3줄5칸</td>
-        </tr>
-        <tr>
-            <td>4줄1칸</td>
-            <td>4줄2칸</td>
-            <td>4줄3칸</td>
-            <td>4줄4칸</td>
-            <td>4줄5칸</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>1줄1칸</th>
+                <td>1줄2칸</td>
+                <td colspan="2">1줄3칸</td>
+                <td>1줄4칸</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">2줄1칸</th>
+                <td>2줄2칸</td>
+                <td>2줄3칸</td>
+                <td>2줄4칸</td>
+                <td>2줄5칸</td>
+            </tr>
+            <tr>
+                <th>3줄1칸</th>
+                <td>3줄2칸</td>
+                <td>3줄3칸</td>
+                <td>3줄4칸</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>4줄1칸</th>
+                <td>4줄2칸</td>
+                <td>4줄3칸</td>
+                <td>4줄4칸</td>
+                <td>4줄5칸</td>
+            </tr>
+        </tfoot>
     </table>
 
 </body>

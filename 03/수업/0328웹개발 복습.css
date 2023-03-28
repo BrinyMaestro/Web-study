@@ -14,4 +14,6 @@ a {
 
 table {
     border-collapse: collapse;
+    width: 600px; height: 300px;
+    text-align: center;
 }
