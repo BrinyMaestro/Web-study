@@ -5,3 +5,13 @@
     line-height: 60px;
     letter-spacing: 20px;
 }
+
+a {
+    font-size: 30pt;
+    text-decoration:none ;
+    color: blue  ;
+}
+
+table {
+    border-collapse: collapse;
+}
