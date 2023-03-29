@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 조작</title>
+</head>
+<body>
+    <h1>js 복습</h1>
+    <p>속성 : href, src, class 등등... 태그 안에 넣어주는 옵션</p>
+
+    <img src="https://img2.quasarzone.com/editor/2021/12/24/9db4869b12f3054440934f099308e0aa.png" alt="">
+
+    <script>
+        // 변수 만드는 단어 : let, const
+        const 이미지 = document.querySelector("img")
+
+        // 속성 조작하기
+        // 이미지.setAttribute("바꾸려는 속성이 뭔지. src", "무엇으로 바꿀 것인지. 초밥")
+        이미지.setAttribute("src", "https://img2.quasarzone.com/editor/2021/07/01/d5009ffa11f3bf55aa7035f6827caac3.png")
+
+    </script>
+
+</body>
+</html>
