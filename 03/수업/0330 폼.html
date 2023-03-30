@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>폼 배우는 시간</title>
+
+    <style>
+        button {
+            border: none;
+            background-color: aquamarine;
+            color: black;
+            padding: 10px;
+            box-shadow: black 1px 1px 1px;
+            border-radius: 2px;
+        }
+    </style>
+
 </head>
 <body>
     <form>
@@ -13,13 +25,13 @@
             <!-- legend : 해당 영역의 타이틀, 제목 -->
             <legend>제목</legend>
 
-            <label for="">ID <input type="text" name="" id=""     placeholder="ID는 8글자 이상"> </label>
+            <label for="">ID <input type="text" name="" id=""  autofocus    placeholder="ID는 8글자 이상"> </label>
             <br>
-            <label for="">비밀번호 <input type="password" name="" id=""></label>
+            <label for="">비밀번호 <input type="password" name="" id=""   placeholder="영문 + 숫자 + 특수문자 10글자 이상"></label>
             <br>
-            <label for="">이메일 <input type="email" name="" id=""></label>
+            <label for="">이메일 <input type="email" name="" id=""   placeholder="azaz220055@gmail.com"></label>
             <br>
-            <label for="">전화번호 <input type="tel" name="" id=""></label>
+            <label for="">전화번호 <input type="tel" name="" id=""    placeholder="000-0000-0000"></label>
 
             <br>
 
@@ -42,6 +54,12 @@
 
         <fieldset>
             <legend>구역2</legend>
+
+            <button>버튼이다</button>
+            <button type="submit">제출</button>
+            <button type="reset">리셋</button>
+
+
         </fieldset>
     </form>
 </body>
