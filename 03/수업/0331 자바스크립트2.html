@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 다루기</title>
+
+     <style>
+        .box {
+            color: khaki;
+            border: 1px solid blue; border-radius: 10px;
+        }
+        .box2 {
+            border: 1px solid rgb(215, 19, 137); background-color: deepskyblue;
+        }
+     </style>
+
+</head>
+<body>
+    
+    <div>
+        <h1>div박스</h1>
+    </div>
+
+    <div class="box2">
+        <h1>div박스2</h1>
+    </div>
+
+    <script>
+        const 박스 = document.querySelector("div")
+        박스.classList.add("box")
+        박스.classList.remove("box")
+
+        // 중요한 코드
+        const 박스2 =document.querySelector(".box2")
+        박스2.innerHTML = 박스2.innerHTML + "<p> p태그를 안에 삽입했다 </p>"
+
+    </script>
+</body>
+</html>
