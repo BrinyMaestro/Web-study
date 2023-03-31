@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 조작 배우기</title>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsduChH0PgDWd7OzFxGbU8IK7PudgLt0WNdMPuATEgbln6tqt3780PAsOa5gONn-p_1o0&usqp=CAU" alt="">
+    <br>
+
+    <label> 예약 인원 <input type="text" class="reserve"></label>
+
+    <button>제출</button>
+
+    <script>
+        // const : 변수에 저장된 값이 바뀌지 않는 변수를 선언하는 것
+        // constance. 상수.
+
+        const 이미지태그 = document.querySelector("img")
+        // 이미지태그.setAttribute('내가 바꾸고자 하는 속성', "무슨 값으로 바꿀 것인지") 
+        이미지태그.setAttribute('src', "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs512qg_gmTl0Am8MgIWRyleM42YJAJKuitQ&usqp=CAU")
+        이미지태그.setAttribute('width', "200")
+
+        // getAttribute : 속성을 가져오는 것
+        let 겟
+        겟 = 이미지태그.getAttribute("width")
+        console.log(겟)
+        겟 = 이미지태그.getAttribute("src")
+        console.log(겟)
+
+        const 인풋박스 = document.querySelector("input") // input 박스 지정
+        const 버튼 = document.querySelector("button") // 버튼 지정
+        버튼.addEventListener("click", function () { //버튼을 마우스로 클릭하면,
+            겟 = 인풋박스.getAttribute("value") // 인풋 박스의 데이터 가져옴.
+            console.log(겟) // 인풋박스에서 가져온 데이터 출력
+            // input에 입력한 값은 getAttribute로 가져오기 어려움
+
+            겟 = 인풋박스.value
+            console.log(겟)
+
+        })
+
+    </script>
+
+
+</body>
+</html>
