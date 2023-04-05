@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="부모1">부모1</div>
+    <hr>
+    <div id="부모2">부모2</div>
+
+
+
+    <script>
+
+        let 새로만든태그
+        새로만든태그 = document.createElement("h1")
+        새로만든태그.textContent = "h1태그에 내용 집어넣음"
+
+        console.log(새로만든태그)
+
+        // 부모가 필요합니다.
+        const 부모1 = document.querySelector("#부모1")
+        부모1.appendChild(새로만든태그)
+
+        const 부모2 = document.querySelector("#부모2")
+        부모2.appendChild(새로만든태그)
+
+    </script>
+
+
+</body>
+</html>
