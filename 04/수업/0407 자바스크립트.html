@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트트</title>
+
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: coral;
+        }
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background-color: coral;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box1">박스1</div>
+    <div class="box2">박스2</div>
+
+    <script>
+        const 박스1 = document.querySelector(".box1")
+        const 박스2 = document.querySelector(".box2")
+
+        박스1.innerHTML = "<h1>박스1에 innerHTML</h1>"
+        박스2.textContent = "박스2에 textContent"
+        
+        let 태그
+        태그 = document.createElement("img")
+        박스2.appendChild(태그)
+        태그.setAttribute("src", "https://pbs.twimg.com/media/EuRCKuMUUAIU_jc.jpg")
+        // 태그.setAttribute("width", "300px")
+        태그.style.width = "300px"
+
+        박스1.appendChild(태그)
+
+        // 박스2.removeChild(태그)
+
+
+
+        // 조건식
+        // a > b     a < b      a >= b    a <= b
+        // a == b    a != b
+        // 나이가 19살이고 && 성별이 남성
+        // 나이가 19살 || 성별이 남성
+
+        // 만약 ~~ 이라면
+        if (조건) {
+            코드
+        }
+        // 만약 다른 ~~ 이라면
+        else if (조건) {
+            코드
+        }
+        // 다 아니라면
+        else {
+            코드
+        }
+
+
+
+    </script>
+</body>
+</html>
