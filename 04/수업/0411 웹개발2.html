@@ -7,20 +7,30 @@
     <title>박스모델</title>
 
     <style>
-        .box {
-            background-color: rgb(71, 192, 192); 
-            width: 300px; 
-            height: 300px;
-            padding: 50px; border: solid red 40px; margin: 50px;
-            box-sizing: border-box;
-            margin-left: auto;
-            margin-right: auto;
+        .test {background-color: cornflowerblue; width: 500px; height: 300px;
+            margin-top: 50px; margin-bottom: 50px;
         }
     </style>
 
 </head>
 <body>
-    <!-- 박스의 사이즈 : 콘텐츠 + 보더 + 패딩 + 마진 -->
-    <div class="box"></div>
+    <h1>블록레벨 태그와 인라인레벨 태그</h1>
+
+    <h3>블록레벨</h3>
+    <p>본인의 분량에 상관없이 화면 전체의 가로폭을 다 차지하는 태그</p>
+    <p>그렇기 때문에 각 태그별로 다른 줄에 작성된다</p>
+    <h3>종류 : h, p, div, ul ol li,</h3>
+
+    <br>
+    <h3>인라인레벨</h3>
+    <p>내용 만큼만 영역을 차지하는 태그</p>
+    <p>그래서 같은 한 줄의 여러 개의 인라인레벨 태그가 올 수 있다</p>
+    <a href="">a태그</a> <button>버튼</button> <label for="">인풋태그 <input type="text"></label> <span>span태그</span> <b>b태그</b> <i>i태그</i> <u>u태그</u> <del>del태그</del>
+    <h3>종류 (자주쓰는거) : a, span, button, label, input, span</h3>
+
+    <hr>
+
+    <a href="#" class="test">테스트용 a태그</a> <span>span태그 테스트용으로</span>
+
 </body>
 </html>
