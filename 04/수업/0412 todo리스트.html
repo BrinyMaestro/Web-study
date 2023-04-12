@@ -28,17 +28,22 @@
         .clear {
             color: #ad1515;
             cursor: pointer;
+            flex: 1;
         }
         .content {
             flex: 8;
         }
         .manage {
-            flex: 1;
+        
         }
         .todo-list li {
             border-bottom: solid 1px rgb(221, 221, 221);
             padding: 15px;
             display: flex;
+        }
+        #input-box {
+            border: none;
+            border-radius: 3px;
         }
 
     </style>
@@ -61,6 +66,21 @@
         </ul>
     </section>
 
-    <script></script>
+    <script>
+        
+        let heart = 1
+
+        const 하트 = document.querySelector(".heart")
+        하트.addEventListener("click", function() {
+            if (heart == 1) {
+                하트.textContent = "favorite"
+                heart = 2
+            }
+            else if (heart == 2) {
+                하트.textContent = "favorite_border"
+                heart = 1
+            }
+        })
+    </script>
 </body>
 </html>
