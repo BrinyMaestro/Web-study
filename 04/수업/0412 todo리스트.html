@@ -16,7 +16,34 @@
             padding: 10px;
             background: linear-gradient(to left, #e5d713 10%, #27dfb7 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
+
+        .heart {
+            color: #df5281; flex: 1;
+            cursor: pointer;
+        }
+        .done { 
+            color: #1c941e;
+            cursor: pointer;
+        }
+        .clear {
+            color: #ad1515;
+            cursor: pointer;
+        }
+        .content {
+            flex: 8;
+        }
+        .manage {
+            flex: 1;
+        }
+        .todo-list li {
+            border-bottom: solid 1px rgb(221, 221, 221);
+            padding: 15px;
+            display: flex;
+        }
+
     </style>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
@@ -25,13 +52,12 @@
         <label for="">할 일 추가 <input type="text" id="input-box"></label>
     </header>
     <section>
-        <ul>
+        <ul class="todo-list">
             <li>
-                <span class="heart">하트 </span>   
+                <i class="medium material-icons heart">favorite_border</i>
                 <span class="content">입력한 내용</span>   
-                <span class="v"> v   x</span>
+                <span class="manage"><i class="medium material-icons done">done</i> <i class="medium material-icons clear">clear</i></span>
             </li>
-            <li>;alkdjc;almd;klamncl;an</li>
         </ul>
     </section>
 
