@@ -33,9 +33,6 @@
         .content {
             flex: 8;
         }
-        .manage {
-        
-        }
         .todo-list li {
             border-bottom: solid 1px rgb(221, 221, 221);
             padding: 15px;
@@ -58,11 +55,11 @@
     </header>
     <section>
         <ul class="todo-list">
-            <li>
-                <i class="medium material-icons heart">favorite_border</i>
-                <span class="content">입력한 내용</span>   
-                <span class="manage"><i class="medium material-icons done">done</i> <i class="medium material-icons clear">clear</i></span>
-            </li>
+            <!-- <li>
+                <i class="material-icons heart">favorie_border</i>
+                <span class="content">입력한 내용</span>
+                <span class="manage"> <i class="material-icons done">done</i> <i class="material-icons clear">clear</i> </span>
+            </li> -->
         </ul>
     </section>
 
@@ -87,18 +84,61 @@
                 li태그.appendChild(하트) // 하트를 li 태그 내에 추가하기
                 console.log(하트)
 
+                하트.addEventListener("click", function() {
+                    if (하트.textContent == "favorite_border") { // 하트가 비워진 경우
+                        하트.textContent = "favorite" // 하트 채운다
+                    }
+                    else { // 하트가 채워진 경우
+                        하트.textContent = "favorite_border" // 하트 비운다
+                    }
+                })
+
                 // 내용 추가
                 let 내용
                 내용 = document.createElement("span")
                 내용.classList.add("content")
                 내용.textContent = 박스.value
+                박스.value = "" // input박스 비우기
                 li태그.appendChild(내용)
+
+                // v x 묶고 있는 span태그 추가
+                let 묶음 
+                묶음 = document.createElement("span")
+                묶음.classList.add("manage")
+                // 그 안에 v추가
+                let v 
+                v = document.createElement("i")
+                v.classList.add("material-icons")
+                v.classList.add("done")
+                v.textContent = "done"
+                묶음.appendChild(v)
+
+                v.addEventListener("click", function () {
+                    내용.style.color = "gray"
+                    내용.style.textDecoration = "line-through"
+                    묶음.removeChild(v)
+                })
+
+
+                // x추가
+                let x
+                x = document.createElement("i")
+                x.classList.add("material-icons")
+                x.classList.add("clear")
+                x.textContent = "clear"
+                묶음.appendChild(x)
+
+                x.addEventListener("click", function () {
+                    ul태그.removeChild(li태그)
+                })
+                
+                li태그.appendChild(묶음) // span태그를 li에 추가
 
                 // li 태그를 ul에 추가하기
                 ul태그.appendChild(li태그)
             }
         })
-
+ 
         
     </script>
 </body>
