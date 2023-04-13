@@ -81,6 +81,30 @@
                 heart = 1
             }
         })
+
+        document.addEventListener("keyup", function(event) {
+
+            let ul태그 = document.querySelector(".todo-list")
+
+
+            if (event.key == "Enter") {
+                // li태그 만들기
+                let li태그 = document.createElement("li")
+
+                // 하트 추가
+                let 하트
+                하트 = document.createElement("i") // i태그 만들기 - document.createElement
+                하트.innerHTML = "favorite-border" // i태그에 favorie_border 넣어주기
+                하트.classList.add("material-icons") // class 추가하기
+                하트.classList.add("heart")
+                li태그.appendChild(하트) // 하트를 li 태그 내에 추가하기
+                console.log(하트)
+
+                
+            }
+        })
+
+        
     </script>
 </body>
 </html>
