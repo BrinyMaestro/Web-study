@@ -71,6 +71,8 @@
         document.addEventListener("keyup", function(event) {
 
             let ul태그 = document.querySelector(".todo-list")
+            let 박스 = document.querySelector("#input-box")
+            
 
             if (event.key == "Enter") {
                 // li태그 만들기
@@ -89,7 +91,7 @@
                 let 내용
                 내용 = document.createElement("span")
                 내용.classList.add("content")
-                내용.textContent = "input에 있는 내용"
+                내용.textContent = 박스.value
                 li태그.appendChild(내용)
 
                 // li 태그를 ul에 추가하기
