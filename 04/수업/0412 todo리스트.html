@@ -68,24 +68,9 @@
 
     <script>
         
-        let heart = 1
-
-        const 하트 = document.querySelector(".heart")
-        하트.addEventListener("click", function() {
-            if (heart == 1) {
-                하트.textContent = "favorite"
-                heart = 2
-            }
-            else if (heart == 2) {
-                하트.textContent = "favorite_border"
-                heart = 1
-            }
-        })
-
         document.addEventListener("keyup", function(event) {
 
             let ul태그 = document.querySelector(".todo-list")
-
 
             if (event.key == "Enter") {
                 // li태그 만들기
@@ -94,13 +79,21 @@
                 // 하트 추가
                 let 하트
                 하트 = document.createElement("i") // i태그 만들기 - document.createElement
-                하트.innerHTML = "favorite-border" // i태그에 favorie_border 넣어주기
+                하트.innerHTML = "favorite_border" // i태그에 favorie_border 넣어주기
                 하트.classList.add("material-icons") // class 추가하기
                 하트.classList.add("heart")
                 li태그.appendChild(하트) // 하트를 li 태그 내에 추가하기
                 console.log(하트)
 
-                
+                // 내용 추가
+                let 내용
+                내용 = document.createElement("span")
+                내용.classList.add("content")
+                내용.textContent = "input에 있는 내용"
+                li태그.appendChild(내용)
+
+                // li 태그를 ul에 추가하기
+                ul태그.appendChild(li태그)
             }
         })
 
