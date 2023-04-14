@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 300px; height: 300px; background-color: rgb(102, 195, 195);
+            display: inline-block;
+        }
+        span {
+            width: 100px; height: 100px; background-color: antiquewhite;
+            display: inline-block;
+        }
+        li {
+            display: inline-block ; background-color: rgb(149, 95, 188); width: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 블록레벨 -->
+    <!-- 화면 전체 가로폭을 다 차지하는 태그 -->
+    <!-- 종류 : h, p, div, ul, ol, li, 시맨틱태그, table, 등등 -->
+    <div class="box"></div>
+
+    <!-- 인라인레벨 -->
+    <!-- 자기 영역만 차지하는 놈. 텍스트로 취급 됨. -> text-align 적용 가능 -->
+    <!-- 종류 : span input label a i u b del button img -->
+    <img src="https://image.fmkorea.com/files/attach/new/20200727/14339012/2828216512/3009046302/8ae00305cbdc5894179dfac887f41c13.jpeg" alt="" width="200px"><span>야모</span>
+
+    <ul>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+    </ul>
+
+    <div class="box">박스1</div>
+    <div class="box" style="background-color: rgb(134, 207, 110); float: right;">박스2</div>
+    <p style="clear: both;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut possimus praesentium fugiat explicabo ipsum hic voluptates rem placeat nostrum quia. Tempore, atque sequi? Quibusdam, similique! Asperiores dolor dignissimos necessitatibus quisquam.</p>
+
+</body>
+</html>
