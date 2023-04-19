@@ -16,9 +16,34 @@
 
             return a + b // 밖으로 내보내주는 데이터
         }
-        let 변수
-        변수 = add(195, 95)
-        console.log(변수)
+        let 덧셈
+        덧셈 = add(195, 95)
+        
+        function sub(a, b) {
+            return a - b
+        }
+        let 뺄셈 = sub(195, 95)
+        
+        function div(a, b) {
+            return a / b
+        }
+        let 나눗셈 = div(195, 95)
+        
+        function mul(a, b) {
+            return a * b
+        }
+        let 곱셈 = mul(195, 95)
+        
+        function mod(a, b) {
+            return a % b
+        }
+        let 나머지 = mod(195, 95)
+
+        console.log(`더하기 결과 : ${덧셈}`)
+        console.log(`빼기 결과 : ${뺄셈}`)
+        console.log(`나누기 결과 : ${나눗셈}`)
+        console.log(`곱하기 결과 : ${곱셈}`)
+        console.log(`나머지 결과 : ${나머지}`)
 
     </script>
 </body>
