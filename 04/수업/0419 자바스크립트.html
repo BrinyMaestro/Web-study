@@ -4,69 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>함수 개념 마스터</title>
 </head>
 <body>
-    <form action="">
+    
 
-        <fieldset>
-            <legend>제목</legend>
-            
-            <label for="">텍스트 <input type="text" name="" id=""></label>
-            
-            <br>
-            
-            <label for="">비밀번호 <input type="text" name="" id=""></label>
-            
-            <br><br>
-            
-            <label for="">전화번호 <input type="number"></label>
-            <label for="">이메일 <input type="text" name="" id=""></label>
+    <script>
+        function add(a, b) { // 함수 안으로 가져오는 데이터
+            console.log(a)
+            console.log(b)
 
-            <br><br>
+            return a + b // 밖으로 내보내주는 데이터
+        }
+        let 변수
+        변수 = add(195, 95)
+        console.log(변수)
 
-            <label for="">체크박스 <input type="checkbox" name="" id=""></label>
-            <label for="">체크박스 <input type="checkbox" name="" id=""></label>
-            <label for="">체크박스 <input type="checkbox" name="" id=""></label>
-
-            <br><br>
-            
-            <label for="링크">라벨</label>
-            <input type="text" name="" id="링크">
-
-            <br><br>
-
-            <button>버튼</button>
-            <button>제출</button>
-            <button>리셋</button>
-
-            <br><br>
-
-            <label for="">슬라이드 <input type="range" min="1" max="5" step="1"></label>
-            <label for="">날짜 <input type="date" name="" id=""></label>
-            <label for="">파일 <input type="file" name="" id=""></label>
-
-            <br><br>
-
-            <select name="" id="">
-                <option value="선택1">출생년도</option>
-                <option value="선택2">선택2</option>
-                <option value="선택3">선택3</option>
-            </select>
-            <select name="" id="">
-                <option value="선택1">월</option>
-                <option value="선택2">선택2</option>
-                <option value="선택3">선택3</option>
-            </select>
-            <select name="" id="">
-                <option value="선택1">일</option>
-                <option value="선택2">선택2</option>
-                <option value="선택3">선택3</option>
-            </select>
-            <textarea name="" id="" cols="100" rows="10"></textarea>
-
-        </fieldset>
-
-    </form>
+    </script>
 </body>
 </html>
