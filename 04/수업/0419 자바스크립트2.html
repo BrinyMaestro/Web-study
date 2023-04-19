@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 과 관련된 이벤트</title>
+</head>
+<body>
+    
+    <label for="">입력칸 <input type="text"></label>
+
+    <script>
+        let 인풋 = document.querySelector("input")
+        
+        // input : 입력
+        인풋.addEventListener("input", (e) => {
+            console.log("입력한거 출력")
+            console.log(e)
+        })
+    </script>
+</body>
+</html>
