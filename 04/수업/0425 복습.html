@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습</title>
+
+    <style>
+        .box{
+            width: 600px; height: 600px; background-color: coral;
+        }
+        .children{
+            width: 150px; height: 150px; background-color: aliceblue;
+        }
+        .box > h2 {color: blue; font-size: 30pt;} /* .box의 자식 h2를 지정 */
+        .box h2 {text-shadow: 2px 2px 0px red;} /* .box안에 있는 모든 h2를 지정 */
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <h2>부모박스</h2>
+
+        <div class="children"><h2>자식 박스</h2></div>
+        <div class="children"><h2>자식 박스</h2></div>
+        <div class="children"><h2>자식 박스</h2></div>
+    </div>
+</body>
+</html>
