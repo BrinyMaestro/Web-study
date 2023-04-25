@@ -15,6 +15,25 @@
         }
         .box > h2 {color: blue; font-size: 30pt;} /* .box의 자식 h2를 지정 */
         .box h2 {text-shadow: 2px 2px 0px red;} /* .box안에 있는 모든 h2를 지정 */
+        .box .children h2 {} /* .box안의 자식인 .children의 자식 h2 */
+        .box > .children > h2 {} /* .box안의 자식 .children의 자식 h2 */
+
+        /* 잘 안씀ㅋ */
+        .box > h2 + .children {} /* .box의 자식인 h2 바로 옆에 나오는 첫번째 형제 */
+        .box > h2 ~ .children {} /* .box의 자식인 h2의 모든 형제 */
+
+        /* 가상 클래스 : 특정 상황에서 스타일을 적용하는 것 */
+        .box:hover {
+             /* hover : 둥둥 떠있다. 마우스를 갖다댄다. */
+             background-color: aqua;
+        }
+        .box > .children:hover {
+            background-color: rgb(215, 111, 231);
+        }
+        .box:active {
+            background-color: darkorange;
+        }
+
     </style>
 
 </head>
