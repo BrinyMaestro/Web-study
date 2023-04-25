@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소 배우기</title>
+
+    <style>
+        /* 가상요소 */
+        .h1tag::before {
+            content: "new";
+            background-color: chocolate; color: white;
+            font-size: 10pt; border-radius: 8px;
+            padding: 3px; margin: 5px;
+        }
+        .h2tag::after {
+            content: "best";
+            background-color: blue; color: white;
+            border-radius: 8px; font-size: 10pt; margin: 5px;
+            padding: 3px;
+        }
+        .h3tag::selection {
+            background-color: orange; color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 class="h1tag">h1태그</h1>
+    <h2 class="h2tag">h2태그</h2>
+    <h3 class="h3tag">h3태그</h3>
+
+</body>
+</html>
