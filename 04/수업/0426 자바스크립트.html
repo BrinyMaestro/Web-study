@@ -8,10 +8,29 @@
 </head>
 <body>
     
+    <label for="">입력 <input type="text"></label>
+    <br><br>
+    <select name="" id="">
+        <option value="1">선택1</option>
+        <option value="2">선택2</option>
+        <option value="3">선택3</option>
+    </select>
 
     <script>
-        function () {return} //원본
-        () => {} // 줄인 것.  화살표 함수
+        //function () {return} //원본
+        //() => {} // 줄인 것.  화살표 함수
+
+        // input 이벤트
+        let 인풋 = document.querySelector("input")
+        인풋.addEventListener("input", (event) => {
+            console.log(event)
+            console.log(event.target)
+        })
+
+        let 셀렉 = document.querySelector("select")
+        셀렉.addEventListener("change", (event) => {
+            console.log(event)
+        })
 
     </script>
 
