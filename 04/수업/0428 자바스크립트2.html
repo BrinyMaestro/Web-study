@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 진도</title>
+</head>
+<body>
+    <select name="셀렉태그" id="sel">
+        <option value="1">셀렉 옵션1</option>
+        <option value="2">셀렉 옵션2</option>
+        <option value="3">셀렉 옵션3</option>
+        <option value="4">셀렉 옵션4</option>
+    </select>
+    
+    <script>
+        let 셀렉 = document.querySelector("select")
+        console.log(셀렉.options)
+        console.log(셀렉.options[0]) // 첫번째 option태그 확인
+        console.log(셀렉.options[0].value)
+        console.log(셀렉.options[0].innerHTML)
+        console.log(셀렉.options[0].textContent)
+        셀렉.options[0].textContent = "수정한 셀렉"
+
+        셀렉.addEventListener("change", () => {
+        })
+    </script>
+</body>
+</html>
