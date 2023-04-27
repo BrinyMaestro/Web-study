@@ -15,9 +15,9 @@
             /* flex-direction: columm; 정렬 방향을 변경 */
             align-items: start;
         }
-        .box1 {flex: 2;}
-        .box2 {flex: 6;}
-        .box3 {flex: 3;}
+        .box1 {flex: 2; order: 3;}
+        .box2 {flex: 6; order: 1;}
+        .box3 {flex: 3; order: 2;}
     </style>
 
 </head>
@@ -32,5 +32,16 @@
         <div class="box box2"> <h1>박스2</h1> </div>
         <div class="box box3" style="height: 300px;"> <h1>박스3</h1> </div>
     </div>
+
+    <div style="display: flex; justify-content:center; align-items:center; border: 1px solid black">
+        <div style="border: 1px solid black;"><h1>예시</h1></div>
+    </div>
+
+    <p>부모에게 적용하는 것:display:flex / justify-content / align-items</p>
+    <p>justify-content: 가로정렬. left center right space-around space-between space-evenly</p>
+    <p>align-items : 세로 정렬. start center end</p>
+    <p>자식에게 적용하는 것: flex / order</p>
+
+
 </body>
 </html>
