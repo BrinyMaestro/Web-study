@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0427 자바스크립트</title>
+</head>
+<body>
+    
+    <button>버튼</button>
+    
+    <script>
+        // change 이벤트
+        // input과 차이점 : 입력을 끝내야 발생하는 이벤트
+        // event.target 이라는 변수 : 이벤트가 발생한 태그를 가리키는 변수
+        let 버튼 = document.querySelector("button")
+        버튼.addEventListener("click", (event) => {
+            console.log(event)
+            console.log(event.target)
+        })
+
+    </script>
+</body>
+</html>
