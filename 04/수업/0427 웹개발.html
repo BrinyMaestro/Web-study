@@ -12,7 +12,12 @@
         .부모 {
             display: flex;
             justify-content:space-evenly; /* 가로정렬. space-between space-evenly space-around */
+            /* flex-direction: columm; 정렬 방향을 변경 */
+            align-items: start;
         }
+        .box1 {flex: 2;}
+        .box2 {flex: 6;}
+        .box3 {flex: 3;}
     </style>
 
 </head>
@@ -23,9 +28,9 @@
     <!-- 3. display: flex. 부모 밑의 자식 태그들을 한 줄로 배열하는 것. 가로나 세로 -->
 
     <div class="부모">
-        <div class="box" style="height: 100px;"> <h1>박스1</h1> </div>
-        <div class="box"> <h1>박스2</h1> </div>
-        <div class="box" style="height: 300px;"> <h1>박스3</h1> </div>
+        <div class="box box1" style="height: 100px;"> <h1>박스1</h1> </div>
+        <div class="box box2"> <h1>박스2</h1> </div>
+        <div class="box box3" style="height: 300px;"> <h1>박스3</h1> </div>
     </div>
 </body>
 </html>
