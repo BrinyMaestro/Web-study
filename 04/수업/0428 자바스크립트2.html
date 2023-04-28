@@ -14,6 +14,12 @@
         <option value="4">셀렉 옵션4</option>
     </select>
     
+    <br><br>
+
+    <label for="">체크박스1 <input type="checkbox" value="1" class="check1"></label>
+    <label for="">체크박스2 <input type="checkbox" value="2" class="check2"></label>
+    <label for="">체크박스3 <input type="checkbox" value="3" class="check3"></label>
+
     <script>
         let 셀렉 = document.querySelector("select")
         console.log(셀렉.options)
@@ -24,6 +30,12 @@
         셀렉.options[0].textContent = "수정한 셀렉"
 
         셀렉.addEventListener("change", () => {
+            console.log(셀렉.options.selectedIndex)
+        })
+
+        let 체크박스1 = document.querySelector(".check1")
+        체크박스1.addEventListener("change", () => {
+            console.log(체크박스1.checked)
         })
     </script>
 </body>
