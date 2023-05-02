@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{box-sizing: border-box;}
+        .child {width: 150px; height: 150px; border: 1px solid black;}
+        .parent {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .child2 {
+            width: 50px; height: 50px; border: 1px solid black;
+        }
+        .parent2 {
+            display: flex; width: 250px; height: 250px;
+        }
+
+        .child:nth-child(1) {order: 2; flex: 5;}
+        .child:nth-child(2) {order: 1; flex: 1;}
+        .child:nth-child(3) {order: 3; flex: 1;}
+    </style>
+
+</head>
+<body>
+    <h1>플렉스 복습</h1>
+    <!-- 박스를 한 줄로 정렬하는 법. display:inline-block   /   float:left -->
+    <div class="parent">
+        <div class="child"><h3>자식1</h3></div>
+        <div class="child parent2">
+            <h3>자식2</h3>
+            <div class="child2"><h3>자식2</h3></div>
+            <div class="child2"><h3>자식2</h3></div>
+            <div class="child2"><h3>자식2</h3></div>
+        </div>
+        <div class="child"><h3>자식3</h3></div>
+    </div>
+</body>
+</html>
