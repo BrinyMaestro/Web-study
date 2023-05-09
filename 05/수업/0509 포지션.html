@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션</title>
+
+    <style>
+        .box {
+            width: 300px; height: 300px;
+            border: 1px solid black;
+        }
+        .box1 {background-color: aqua; position: relative; left: 100px; top: 60px; z-index: 3;}
+        .box2 {background-color: brown; position: relative; left: 70px; bottom: 30px; z-index: 1;}
+        .box3 {
+            background-color: blueviolet; position: fixed; top: 0px; left: 0px;
+            width: 100%; height: 50px;
+        }
+        .box4 {
+            background-color: yellow;
+            width: 600px; height: 450px;
+            position: relative;
+        }
+        .child {
+            background-color: antiquewhite;
+            position: absolute; right: 0px; bottom: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">
+        박스4
+        <div class="box child">자식</div>
+    </div>
+</body>
+</html>
