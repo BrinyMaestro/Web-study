@@ -11,7 +11,11 @@
         #container > div {background-color: aquamarine; border: 1px solid black;}
         #container {
             display: grid;
-            grid-template-columns: 100px 2fr 3fr;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 4fr 3fr 2fr;
+            gap: 10px 20px;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 
@@ -24,6 +28,12 @@
         <div>아이템4</div>
         <div>아이템5</div>
         <div>아이템6</div>
+        <div>아이템7</div>
+        <div>아이템8</div>
+        <div>아이템9</div>
+        <div>아이템10</div>
+        <div>아이템11</div>
+        <div>아이템12</div>
     </div>
 </body>
 </html>
