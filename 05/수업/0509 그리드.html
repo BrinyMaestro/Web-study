@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드</title>
+
+    <style>
+        *{margin: 0; padding: 0;}
+        #container > div {background-color: aquamarine; border: 1px solid black;}
+        #container {
+            display: grid;
+            grid-template-columns: 100px 2fr 3fr;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div>아이템1</div>
+        <div>아이템2</div>
+        <div>아이템3</div>
+        <div>아이템4</div>
+        <div>아이템5</div>
+        <div>아이템6</div>
+    </div>
+</body>
+</html>
