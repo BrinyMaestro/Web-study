@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>배열</title>
 </head>
 <body>
+    <h1>배열</h1>
     
     <script>
-        for ( ; ; ) {}
+        let 배열 = [10, 22, 13, 15, 17]
+
+        console.log(배열[0], 배열[2])
+        console.log(배열.length)
+        배열.push("adfafd")
+        배열.push("fdfadfafd")
+        console.log(배열)
+        console.log(배열.length)
+
+        // 객체  dictionary
+        let 김태연 = {
+            name:"김태연", 
+            age:19, 
+            school:"종로산정",
+            취미:["자전거", "키보드"],
+        }
+
+        let 김은성 = {
+            name:"김은성", 
+            age:19, 
+            school:"종로산정",
+            신체:{
+                키:179,
+                체중:80
+            }
+        }
+
+        console.log(김태연.name, 김태연.age, 김태연.school, 김태연.취미)  
+        console.log(김은성.name, 김은성.age, 김은성.school, 김은성.신체)        
+
     </script>
 </body>
 </html>
