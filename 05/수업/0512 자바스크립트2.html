@@ -37,7 +37,15 @@
         let 원래대로
         원래대로 = JSON.parse(표준변환) // JSON으로 변환된 데이터를 원래대로 복귀시킴
         console.log(원래대로)
-        
+
+        let 문자열 = "Hello, World!"
+        console.log(`문자열의 길이를 알려주는게 문자열.length ${문자열.length}` )
+        console.log(`문자열을 자르는게 문자열.slice(a, b) ${문자열.slice(0,2)}` )
+        console.log(`여백 제거하는게 문자열.trim ${"   afadfadf   ".trim()}` )
+        let 쪼갠거 = 문자열.split(",")
+        console.log(`문자열을 기준을잡고 쪼개는게 문자열.split`, 쪼갠거 )
+        console.log(`원하는 단어의 위치 찾는게 문자열.indexOf() ${문자열.indexOf("r")}` )
+
     </script>
 </body>
 </html>
