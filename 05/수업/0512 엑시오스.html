@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엑시오스로 데이터 불러오기</title>
+</head>
+<body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        axios.get('https://asia.api.riotgames.com/lol/match/v5/matches/KR_6490535104?api_key=RGAPI-61e1e11b-02ec-4c13-a416-30b086e26fa5')
+            .then(function (response) {
+                // 성공 핸들링
+                console.log(response);
+                console.log(response.data.info.participants[5].summonerName)
+                console.log(response.data.info.participants[5].championName)
+                console.log("킬", response.data.info.participants[5].kills)
+                console.log("뎃", response.data.info.participants[5].deaths)
+
+                document.write(response.data.info.participants[5].summonerName)
+                document.write(response.data.info.participants[5].championName)
+                document.write(`킬 ${response.data.info.participants[5].kills}`)
+                document.write(`뎃 ${response.data.info.participants[5].deaths}`)
+            })
+            .catch(function (error) {
+                // 에러 핸들링
+                console.log(error);
+            })
+
+    </script>
+</body>
+</html>
