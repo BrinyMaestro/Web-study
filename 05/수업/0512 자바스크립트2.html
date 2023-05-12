@@ -12,6 +12,32 @@
         // 모든 변수는 객체
         let a = 3.14159265 
         console.log(a.toFixed(2))
+
+        // 내가 만들지 않았어도, 존재하는 객체가 있음.
+        let ob = [{
+                name: "가붕가붕가붕가붕",
+                lane: "top",
+                champion: "가붕",
+                kills: 5,
+                deaths: 10,
+            },
+            {
+                name: "만득아달려",
+                lane: "top",
+                champion: "티모",
+                kills: 0,
+                deaths: 11,
+            }
+        ]
+
+        let 표준변환
+        표준변환 = JSON.stringify(ob) // JSON으로 변한한 데이터를 집어넣을 것임
+        console.log(표준변환)
+
+        let 원래대로
+        원래대로 = JSON.parse(표준변환) // JSON으로 변환된 데이터를 원래대로 복귀시킴
+        console.log(원래대로)
+        
     </script>
 </body>
 </html>
