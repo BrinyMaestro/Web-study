@@ -1,0 +1,40 @@
+* {margin: 0; padding: 0;}
+
+/* 이 부분은 상단 메뉴 부분 */
+
+.header {
+    background-color: rgb(80, 140, 218);
+    display: flex; justify-content: space-between;
+    padding: 20px;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+}
+
+select {
+    width: 200px;
+}
+
+.main {
+    position: relative; top: 400px;
+    display: flex; justify-content: center; align-items: center;
+    flex-direction: column;
+}
+
+.region {
+    font-size: 40pt; color: darkcyan;
+}
+.temp span {font-size: 60pt;}
+.temp {
+    font-size: 30pt;
+}
+
+.detail {
+    display: flex;
+}
+
+.detail > span {
+    background-color: deepskyblue; color: white;
+    border-radius: 8px; padding: 5px; margin: 10px;
+}
