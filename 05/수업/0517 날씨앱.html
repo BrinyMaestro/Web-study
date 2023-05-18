@@ -69,11 +69,6 @@
             console.log(e)
             // e.target.value에 option의 value가 들어있음
 
-            /* change 이벤트 발생
-                선택한 option의 value(지역)에 대해 API 요청
-                API 받아오기
-                온도, 체감온도, 풍속, 지역, 날씨 아이콘 수정하기 */
-
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&appid=${KEY}`)
             .then(function (response) {
                 // 성공 핸들링
