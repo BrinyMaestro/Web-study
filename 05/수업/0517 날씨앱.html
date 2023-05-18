@@ -14,6 +14,7 @@
         <header class="header">
             <h1>전 세계 날씨 검색</h1>
             <select name="" id="">
+                <option value="seoul">서울</option>
                 <option value="osaka">오사카</option>
                 <option value="fukuoka">후쿠오카</option>
                 <option value="venezia">베네치아</option>
@@ -37,7 +38,30 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         const KEY = "47c44037a668e7569c5d4687b724255e"
-        
+        const 도시이름 = document.querySelector(".region")
+        const 기온 = document.querySelector(".temp span")
+        const 체감온도 = document.querySelector(".feel span")
+        const 풍속 = document.querySelector(".wind span")
+        const 이미지 = document.querySelector(".icon")
+
+        //디폴트
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=${KEY}`)
+        .then(function (response) {
+            // 성공 핸들링
+            console.log(response);
+
+            도시이름.innerHTML = response.data.name
+            기온.innerHTML = (response.data.main.temp - 273).toFixed(1)
+            체감온도.innerHTML = (response.data.main.feels_like - 273).toFixed(1)
+            풍속.innerHTML = response.data.wind.speed
+            이미지.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+
+            console.log("도시 이름", response.data.name)
+            console.log("기온", response.data.main.temp)
+            console.log("체감온도", response.data.main.feels_like)
+            console.log("풍속", response.data.wind.speed)
+        })
+
         //let API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`
     
         const 셀렉 = document.querySelector("select")
@@ -54,6 +78,17 @@
             .then(function (response) {
                 // 성공 핸들링
                 console.log(response);
+
+                도시이름.innerHTML = response.data.name
+                기온.innerHTML = (response.data.main.temp - 273).toFixed(1)
+                체감온도.innerHTML = (response.data.main.feels_like - 273).toFixed(1)
+                풍속.innerHTML = response.data.wind.speed
+                이미지.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+
+                console.log("도시 이름", response.data.name)
+                console.log("기온", response.data.main.temp)
+                console.log("체감온도", response.data.main.feels_like)
+                console.log("풍속", response.data.wind.speed)
             })
             .catch(function (error) {
                 // 에러 핸들링
