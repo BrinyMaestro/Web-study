@@ -66,19 +66,36 @@
         // summoner api로 유저 데이터를 가져오는 부분
         const api키 = "RGAPI-faa5b101-a82c-480b-96c3-23b7eb132e70"
         let 검색할유저
+        let 소환사puuid
+        let 소환사id
         const 인풋태그 = document.querySelector("#user")
         const 검색버튼 = document.querySelector("button")
-
-        let 소환사puuid
+        const 티어 = document.querySelector(".tier h2")
+        const 승률 = document.querySelector(".tier .percent")
+        const 승 = document.querySelector(".win")
+        const 패 = document.querySelector(".lose")
+        const 티어이미지 = document.querySelector(".tier img")
 
         let summonerAPI
-        검색버튼.addEventListener("click", function() { // 검색버튼 클릭하면 (이벤트 발생)
+        let leagueAPI
+
+        검색버튼.addEventListener("click", async function() { // 검색버튼 클릭하면 (이벤트 발생)
             검색할유저 = 인풋태그.value // input 태그에 들어있는 value를 가져오기
+           
+           // summonerAPI 를 호출하는 부분
+           await 소환사API()
+           // LEAGUEAPI를 호출하는 부분
+           await 리그API()
+
+        })
+
+        async function 소환사API() {
             summonerAPI = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${검색할유저}?api_key=${api키}`
-            axios.get(summonerAPI)
-            .then(function (response) {
+            let response = await axios.get(summonerAPI)
+        
                 console.log(response)
 
+                소환사id = response.data.id
                 소환사puuid = response.data.puuid
 
                 // 소환사 이름 변경
@@ -92,10 +109,21 @@
                 // 소환사 프사 변경
                 const 프사 = document.querySelector(".img img")
                 프사.setAttribute("src", `https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon${response.data.profileIconId}.jpg?image=q_auto,f_webp,w_auto&v=1684436046850`)
-            })
-        })
-
-        // `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${컵라면3분뉴스}?api_key=${RGAPI-faa5b101-a82c-480b-96c3-23b7eb132e70}`
+ 
+        }
+        
+        async function 리그API() {
+          
+            leagueAPI = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${소환사id}?api_key=${api키}`
+            let response = await axios.get(leagueAPI)
+            console.log(response)
+            
+            티어.textContent = response.data[0].tier + " " + response.data[0].rank
+            승률.textContent = ((response.data[0].wins / (response.data[0].wins + response.data[0].losses))*100).toFixed(2)
+            승.textContent = response.data[0].wins
+            패.textContent = response.data[0].losses
+            티어이미지.setAttribute("src", `https://opgg-static.akamaized.net/images/medals_new/${response.data[0].tier}.png?image=q_auto,f_webp,w_144&v=1684436046850`)
+        }
 
     </script>
 
