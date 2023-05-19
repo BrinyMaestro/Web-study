@@ -28,8 +28,8 @@
             <div class="profile2">
                 <div class="img"><img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon5766.jpg?image=q_auto,f_webp,w_auto&v=1684436046850" width="150px" alt="가붕이미지"></div>
                 <div class="name">
-                    가붕가붕가붕가붕<br>
-                    Level <span class="level"> 00</span>
+                    <h2>가붕가붕가붕가붕</h2>
+                    <h2>Level <span class="level"> 00</span></h2>
                 </div>
                 <div class="tier">
                     <img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/4415894930323/Challenger_Emblem_2022.png" alt="">
@@ -61,19 +61,39 @@
 
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         // summoner api로 유저 데이터를 가져오는 부분
         const api키 = "RGAPI-faa5b101-a82c-480b-96c3-23b7eb132e70"
         let 검색할유저
-
         const 인풋태그 = document.querySelector("#user")
         const 검색버튼 = document.querySelector("button")
+
+        let 소환사puuid
+
+        let summonerAPI
         검색버튼.addEventListener("click", function() { // 검색버튼 클릭하면 (이벤트 발생)
             검색할유저 = 인풋태그.value // input 태그에 들어있는 value를 가져오기
-            console.log(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${검색할유저}?api_key=${api키}`)
-        })
+            summonerAPI = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${검색할유저}?api_key=${api키}`
+            axios.get(summonerAPI)
+            .then(function (response) {
+                console.log(response)
 
+                소환사puuid = response.data.puuid
+
+                // 소환사 이름 변경
+                const 이름 = document.querySelector(".name h2")
+                이름.textContent = response.data.name
+ 
+                // 소환사 레벨 변경
+                const 레벨 = document.querySelector(".name .level")
+                레벨.textContent = response.data.summonerLevel
+
+                // 소환사 프사 변경
+                const 프사 = document.querySelector(".img img")
+                프사.setAttribute("src", `https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon${response.data.profileIconId}.jpg?image=q_auto,f_webp,w_auto&v=1684436046850`)
+            })
+        })
 
         // `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${컵라면3분뉴스}?api_key=${RGAPI-faa5b101-a82c-480b-96c3-23b7eb132e70}`
 
