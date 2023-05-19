@@ -11,8 +11,11 @@
         #container {width: 1000px; margin: 0 auto;}
 
         .profile1 {border: 1px solid rgb(150, 150, 150);}
-        .profile2 {display: flex; justify-content: space-between;}
+        .profile2 {display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgb(150, 150, 150);}
+        .tier img {width: 100px;}
+        .tier p {display: flex;}
         .profile3 {display: flex; justify-content: space-between;}
+        .kda20 {display: flex;}
     </style>
 
 
@@ -23,17 +26,58 @@
     
         <section class="profile1">
             <div class="profile2">
-                <div class="img"></div>
-                <div class="name"></div>
-                <div class="tier"></div>
+                <div class="img"><img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon5766.jpg?image=q_auto,f_webp,w_auto&v=1684436046850" width="150px" alt="가붕이미지"></div>
+                <div class="name">
+                    가붕가붕가붕가붕<br>
+                    Level <span class="level"> 00</span>
+                </div>
+                <div class="tier">
+                    <img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/4415894930323/Challenger_Emblem_2022.png" alt="">
+                    <h2>챌</h2>
+                    <p>승률 <span class="percent">99</span>% (<span class="win">ㅇ</span>승 <span class="lose">ㅇ</span>패)</p>
+                </div>
             </div>
             <div class="profile3">
-                <div class="KDA20">20개 게임의 승률과 KDA</div>
-                <div class="position20">20개 게임의 포지션</div>
-                <div class="champion20">20개 게임의 최근 챔피언</div>
+                <div class="kda20">
+                    <div class="percent2">
+                        <h3>승률 <span>ㅇㅇ</span>%</h3>
+                        <p><span>ㅇ</span>승 <span>ㅇ</span>패</p>
+                    </div>
+                    <div class="kda2">
+                        <h3>KDA <span>ㅇㅇ</span></h3>
+                        <p><span class="kill">ㅇ</span> / <span class="death">ㅇ</span> / <span>ㅇ</span></p>
+                    </div>
+                </div>
+                <div class="position20">
+                    <p>20개 게임의 포지션</p>
+                    <p>탑<span class=top>0</span> 미드<span class="mid">0</span> 원딜<span class="bottom">0</span> 서폿<span class="supporter">0</span> 정글<span class="jungle">0</span></p>
+                </div>
+                <div class="champion20">
+                    <p>20개 게임의 최근 챔피언</p>
+                    <p class="champions">여기에 챔피언 들어감</p>
+                </div>
             </div>
         </section>
 
     </div>
+
+
+    <script>
+        // summoner api로 유저 데이터를 가져오는 부분
+        const api키 = "RGAPI-faa5b101-a82c-480b-96c3-23b7eb132e70"
+        let 검색할유저
+
+        const 인풋태그 = document.querySelector("#user")
+        const 검색버튼 = document.querySelector("button")
+        검색버튼.addEventListener("click", function() { // 검색버튼 클릭하면 (이벤트 발생)
+            검색할유저 = 인풋태그.value // input 태그에 들어있는 value를 가져오기
+            console.log(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${검색할유저}?api_key=${api키}`)
+        })
+
+
+        // `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${컵라면3분뉴스}?api_key=${RGAPI-faa5b101-a82c-480b-96c3-23b7eb132e70}`
+
+    </script>
+
 </body>
 </html>
