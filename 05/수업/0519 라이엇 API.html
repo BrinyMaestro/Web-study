@@ -16,13 +16,15 @@
         .tier p {display: flex;}
         .profile3 {display: flex; justify-content: space-between;}
         .kda20 {display: flex;}
+        .game {display: flex; justify-content:space-between;}
+        .game > div {border: 1px solid rgb(150, 150, 150); flex: auto;}
     </style>
 
 
 </head>
 <body>
     <div id="container">
-        <label for="" style="text-align: center;">유저 <input type="text" id="user"></label> <button>검색</button>
+        <label for="" style="text-align: center;">유저 <input type="text" id="user" value="컵라면3분뉴스"></label> <button>검색</button>
     
         <section class="profile1">
             <div class="profile2">
@@ -57,6 +59,24 @@
                     <p class="champions">여기에 챔피언 들어감</p>
                 </div>
             </div>
+
+            <!-- 20개 게임 -->
+            <div class="games">
+                <div class="game">
+                    <div><span class="win-lose">승패</span> <span class="game-type">큐</span></div>
+                    <div><span class="champion">챔피언</span> <span class="champ-level">레벨</span> <span class="multi-kill">더블킬 등</span> <span class="rune">룬</span></div>
+                    <div><span class="game-kill">kill</span> <span class="game-death">death</span> <span class="game-assist">assist</span> <span class="per">per</span> <span class="cs">cs</span></div>
+                    <div><span class="item1">아이템1</span> <span class="item2">아이템2</span> <span class="item3">아이템3</span></div>
+                    <div><span class="user1">유저1</span> <span class="user2">유저2</span> <span class="user3">유저3</span></div>
+                </div>
+                <div class="game">
+                    <div><span class="win-lose">승패</span> <span class="game-type">큐</span></div>
+                    <div><span class="champion">챔피언</span> <span class="champ-level">레벨</span> <span class="multi-kill">더블킬 등</span> <span class="rune">룬</span></div>
+                    <div><span class="game-kill">kill</span> <span class="game-death">death</span> <span class="game-assist">assist</span> <span class="per">per</span> <span class="cs">cs</span></div>
+                    <div><span class="item1">아이템1</span> <span class="item2">아이템2</span> <span class="item3">아이템3</span></div>
+                    <div><span class="user1">유저1</span> <span class="user2">유저2</span> <span class="user3">유저3</span></div>
+                </div>
+            </div>
         </section>
 
     </div>
@@ -64,7 +84,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         // summoner api로 유저 데이터를 가져오는 부분
-        const api키 = "RGAPI-faa5b101-a82c-480b-96c3-23b7eb132e70"
+        const api키 = "RGAPI-aff382c3-1979-4163-99da-0af83bde3991"
         let 검색할유저
         let 소환사puuid
         let 소환사id
@@ -78,6 +98,8 @@
 
         let summonerAPI
         let leagueAPI
+        let matchAPI
+        let gameAPI = []
 
         검색버튼.addEventListener("click", async function() { // 검색버튼 클릭하면 (이벤트 발생)
             검색할유저 = 인풋태그.value // input 태그에 들어있는 value를 가져오기
@@ -86,13 +108,14 @@
            await 소환사API()
            // LEAGUEAPI를 호출하는 부분
            await 리그API()
-
+            // matchAPI를 호출하는 부분
+           await 게임20개()
         })
 
         async function 소환사API() {
             summonerAPI = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${검색할유저}?api_key=${api키}`
-            let response = await axios.get(summonerAPI)
-        
+            let response = await axios.get(summonerAPI) 
+                console.log("소환사API 호출")
                 console.log(response)
 
                 소환사id = response.data.id
@@ -116,6 +139,7 @@
           
             leagueAPI = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${소환사id}?api_key=${api키}`
             let response = await axios.get(leagueAPI)
+            console.log("리그API 호출")
             console.log(response)
             
             티어.textContent = response.data[0].tier + " " + response.data[0].rank
@@ -123,6 +147,39 @@
             승.textContent = response.data[0].wins
             패.textContent = response.data[0].losses
             티어이미지.setAttribute("src", `https://opgg-static.akamaized.net/images/medals_new/${response.data[0].tier}.png?image=q_auto,f_webp,w_144&v=1684436046850`)
+        }
+
+        async function 게임20개 () {
+            // 1. puui로 매치id 얻기 - API 호출
+            matchAPI = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${소환사puuid}/ids?start=0&count=20&api_key=${api키}`
+            let 매치20개 = await axios.get(matchAPI)
+            console.log("매치20개")
+            console.log(매치20개)
+            // 매치 요청 URL
+
+        
+            // 2.매치 id로 매치 검색 - API 호출
+            for(let i=0; i <= 19 ; i = i + 1) {
+                gameAPI.push(`https://asia.api.riotgames.com/lol/match/v5/matches/${매치20개.data[i]}?api_key=${api키}`)
+
+                console.log(gameAPI[i])
+                
+            }
+            
+            
+            let 게임 = await axios.get(gameAPI[0])
+            
+            console.log("게임")
+            console.log(게임)
+
+            /*
+            console.log(게임.data.info.participants[8].summonerName)
+            console.log(게임.data.info.participants[8].championName)
+            console.log(게임.data.info.participants[8].kills)
+            console.log(게임.data.info.participants[8].deaths)
+            console.log(게임.data.info.participants[8].totalDamageDealtToChampions)
+            console.log(게임.data.info.participants[8].win)
+            */
         }
 
     </script>
