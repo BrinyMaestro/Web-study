@@ -17,8 +17,11 @@
         .profile3 {display: flex; justify-content: space-between;}
         .kda20 {display: flex;}
         .game {display: flex; justify-content:space-between;}
-        .game > div {border: 1px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
+        .game > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
         .user1 { font-size: 5pt;}
+        .item2 {border: 1px solid rgb(150, 150, 150); height: 50px;}
+        .game2 {display: flex; justify-content:space-between; margin-top: -3px;}
+        .game2 > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
     </style>
 
 
@@ -53,7 +56,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         // summoner api로 유저 데이터를 가져오는 부분
-        const api키 = "RGAPI-758516d4-e526-4cc1-9234-d1ca10e7469e"
+        const api키 = "RGAPI-4486b5e2-c32b-4990-9890-4f60b12afa6a"
         let 검색할유저
         let 소환사puuid
         let 소환사id
@@ -184,50 +187,50 @@
                     자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item0}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item1 > 0) {
                     자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item1}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item2 > 0) {
                     자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item2}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item3 > 0) {
                     자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item3}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item4 > 0) {
                     자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item4}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item5 > 0) {
                     자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item5}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item6 > 0) {
                     자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item6}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="50px" height="50px" alt="아이템"></span>`
                 }
                 
                 게임20개넣을곳.appendChild(자식)
                 // 같이 게임한 유저들
                 let 자식2
                 자식2 = document.createElement("div")
-                자식2.classList.add("game")
+                자식2.classList.add("game2")
                 
                 for (let i = 0 ; i <= 9 ; i = i + 1) {
                     if (내번호 == i) {
