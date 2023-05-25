@@ -38,13 +38,15 @@
         <br>
 
         <div class="advbar">
-            <div><p>승 / 패</p></div>
-            <div><p>게임모드</p></div>
-            <div><p>챔피언</p></div>
-            <div><p>멀티킬</p></div>
-            <div><p>룬</p></div>
-            <div><p>K / D / A / CS</p></div>
-            <div><p>아이템</p></div>
+            <div style="width: 50px;"><p>승 / 패</p></div>
+            <div style="width: 70px;"><p>게임모드</p></div>
+            <div style="width: 280px;">
+                <div><p>챔피언</p></div>
+                <div><p>멀티킬</p></div>
+                <div><p>룬</p></div>
+            </div>
+            <div style="width: 200px;"><p>K / D / A / CS</p></div>
+            <div style="width: 305px; border:none;"><p>아이템</p></div>
         </div>
 
         <!-- 20개 게임 -->
@@ -192,51 +194,51 @@
                 자식.innerHTML = 자식.innerHTML +
                 `
                     <div class="game-type"><span>${게임.data.info.gameMode}</span></div>
-                    <div class="champinfo"><div class="champion"><img src="https://opgg-static.akamaized.net/meta/images/lol/champion/${게임.data.info.participants[내번호].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1684731456578" width="48px" alt="챔피언"></div> <div class="champ-level"><span>Lv . ${게임.data.info.participants[내번호].champLevel}</span> <span class="multi-kill">${멀티킬}</span> <span class="rune"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perk/${게임.data.info.participants[내번호].perks.styles[0].selections[0].perk}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="40px" alt="룬1"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perkStyle/${게임.data.info.participants[내번호].perks.styles[1].style}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="30px" alt="룬2"></span></div></div>
-                    <div><span class="game-kill">${게임.data.info.participants[내번호].kills}</span> <span> / </span> <span class="game-death">${게임.data.info.participants[내번호].deaths}</span> <span> / </span> <span class="game-assist">${게임.data.info.participants[내번호].assists}</span> <span> / </span> <span class="cs">CS - ${게임.data.info.participants[내번호].totalMinionsKilled}</span></div>
+                    <div class="champinfo"><div class="champion"><img src="https://opgg-static.akamaized.net/meta/images/lol/champion/${게임.data.info.participants[내번호].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1684731456578" width="48px" alt="챔피언"></div> <div class="champ-level"><span style="font-size:15pt;">Lv . ${게임.data.info.participants[내번호].champLevel}</span> <span class="multi-kill">${멀티킬}</span> <span class="rune"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perk/${게임.data.info.participants[내번호].perks.styles[0].selections[0].perk}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="40px" alt="룬1"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perkStyle/${게임.data.info.participants[내번호].perks.styles[1].style}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="30px" alt="룬2"></span></div></div>
+                    <div class="kda"><span class="game-kill">${게임.data.info.participants[내번호].kills}</span> <span> / </span> <span class="game-death">${게임.data.info.participants[내번호].deaths}</span> <span> / </span> <span class="game-assist">${게임.data.info.participants[내번호].assists}</span> <span> / </span> <span class="cs">CS - ${게임.data.info.participants[내번호].totalMinionsKilled}</span></div>
                 `
 
                 if (게임.data.info.participants[내번호].item0 > 0) {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item0}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item0}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="40px" height="40px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="49px" height="49px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span><img class="item2" src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="40px" height="40px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item1 > 0) {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item1}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item1}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="40px" height="40px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="49px" height="49px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span><img class="item2" src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="40px" height="40px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item2 > 0) {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item2}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item2}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="40px" height="40px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="49px" height="49px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span><img class="item2" src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="40px" height="40px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item3 > 0) {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item3}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item3}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="40px" height="40px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="49px" height="49px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span><img class="item2" src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="40px" height="40px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item4 > 0) {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item4}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item4}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="40px" height="40px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="49px" height="49px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span><img class="item2" src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="40px" height="40px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item5 > 0) {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item5}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item5}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="40px" height="40px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="49px" height="49px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span><img class="item2" src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="40px" height="40px" alt="아이템"></span>`
                 }
                 if (게임.data.info.participants[내번호].item6 > 0) {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item6}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="50px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span class="item1"><img src="https://opgg-static.akamaized.net/meta/images/lol/item/${게임.data.info.participants[내번호].item6}.png?image=q_auto,f_webp,w_44&v=1684731456578" width="40px" height="40px" alt="아이템"></span>`
                 }
                 else {
-                    자식.innerHTML = 자식.innerHTML + `<span class="item2"><img src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="49px" height="49px" alt="아이템"></span>`
+                    자식.innerHTML = 자식.innerHTML + `<span><img class="item2" src="https://t1.daumcdn.net/cfile/tistory/99409A3E5CC0BD8F0B" width="40px" height="40px" alt="아이템"></span>`
                 }
                 
                 게임20개넣을곳.appendChild(자식)
