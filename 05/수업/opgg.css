@@ -1,5 +1,5 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
-#container {width: 2000px; margin: 0 auto;}
+#container {width: 2000px; margin: 0 auto; background-color: #d3b796; padding: 20px; border-radius: 20px;}
 *{font-family: 'Gemunu Libre', sans-serif;}
 
 body {background-color: #BA9D7B;}
@@ -13,12 +13,30 @@ body {background-color: #BA9D7B;}
 .per p {display: flex; font-size: 15pt; font-weight: bold;}
 .profile3 {display: flex; justify-content: space-between;}
 .kda20 {display: flex;}
-.game {display: flex; justify-content:space-between;}
-.game > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
+.game {display: flex;justify-content: start;}
+.game > div {border: 2px solid #BA9D7B; display: flex; align-items: center; height: 50px;}
 .user1 { font-size: 5pt;}
 .item2 {border: 1px solid rgb(150, 150, 150); height: 50px;}
 .game2 {display: flex; justify-content:space-between; margin-top: -3px;}
-.game2 > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
+.game2 > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px; background-color: white;}
 .rune {display: flex; justify-content: space-between; align-items: center;}
-.head {margin-left: auto; margin-right: auto; width: 700px; display: flex; justify-content: space-between; align-items: center;}
+.head {margin-left: auto; margin-right: auto; margin-top: 15px; margin-bottom: 15px; width: 700px; height: 70px; display: flex; justify-content: space-between; align-items: center; background-color: #D9D9D9; border-radius: 50px; }
 .name {width: 300px; padding:10px ;}
+#user {background-color: #D9D9D9; border-radius: 50px; width: 500px; height: 70px; font-size: 15pt; padding: 20px; border: none;}
+#user:focus {outline: none;}
+.search {background-color: #9A7878; width: 60px; height: 60px; border-radius: 50px; border: none; margin-right: 5px; font-size: 10pt; color: white; cursor: pointer;}
+.search:hover {background-color: #7a5a5a;}
+.search:active {background-color: #523f3f;}
+.logo {width:500px; height: 150px; margin-right: auto; margin-left: auto; display: flex; justify-content: space-between; margin-top: 20px; margin-bottom: 10px;}
+.logo p {margin-left: 30px;} 
+.logo p span {font-size: 100pt; font-family: 'Dokdo', cursive; }
+.advbar {display: flex;}
+.win-lose, .win_, .lose_ {width: 50px; display: flex; justify-content: space-around;}
+.win_ {background-color: rgb(144, 165, 255);}
+.lose_ {background-color: rgb(255, 139, 139);}
+.game-type {width: 70px; display: flex; justify-content: space-around;}
+.champion img {border-radius:50px ;}
+.champion {border: none; width: 48px;}
+.champinfo {width: 300px; display: flex; justify-content: space-between; align-items: center;}
+.champinfo div {margin-left: 5px; margin-right: 5px; display: flex; align-items: center;}
+.champ-level {display: flex; align-items: center;}

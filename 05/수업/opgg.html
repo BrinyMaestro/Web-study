@@ -10,11 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dokdo&display=swap" rel="stylesheet">
     
 </head>
 <body>
+    <div class="logo"><img src="https://cdn.iconscout.com/icon/free/png-256/free-dog-229-450767.png?f=webp&w=256" width="150px" alt="logo"> <p><span style="color: #434343;">DO</span><span style="color: black;">.</span><span style="color: #6A4A4A;">GG</span></p></div>
+    <div class="head"><label for=""><input type="text" id="user" autocomplete="off" placeholder="소환사명" value="컵라면3분뉴스"></label> <button class="search">SEARCH</button></div>
     <div id="container">
-        <div class="head"><label for="" style="text-align: center;"><input type="text" id="user" value="컵라면3분뉴스"></label> <button>검색</button></div>
     
         <section class="profile1">
             <div class="profile2">
@@ -35,7 +37,15 @@
 
         <br>
 
-        
+        <div class="advbar">
+            <div><p>승 / 패</p></div>
+            <div><p>게임모드</p></div>
+            <div><p>챔피언</p></div>
+            <div><p>멀티킬</p></div>
+            <div><p>룬</p></div>
+            <div><p>K / D / A / CS</p></div>
+            <div><p>아이템</p></div>
+        </div>
 
         <!-- 20개 게임 -->
         <div class="games">
@@ -170,19 +180,19 @@
                 자식.classList.add("game")
 
                 if (게임.data.info.participants[내번호].win == true ) {
-                    자식.innerHTML = `<div><span class="win-lose">승</span></div>`
+                    자식.innerHTML = `<div class="win_"><span>승</span></div>`
                 }
                 else if (게임.data.info.participants[내번호].win == false ) {
-                    자식.innerHTML = `<div><span class="win-lose">패</span></div>`
+                    자식.innerHTML = `<div class="lose_"><span>패</span></div>`
                 }
                 else {
-                    자식.innerHTML = `<div><span class="win-lose">다시하기</span></div>`
+                    자식.innerHTML = `<div class="win-lose"><span>다시하기</span></div>`
                 }
 
                 자식.innerHTML = 자식.innerHTML +
                 `
-                    <div><span class="game-type">${게임.data.info.gameMode}</span></div>
-                    <span class="champion"><img src="https://opgg-static.akamaized.net/meta/images/lol/champion/${게임.data.info.participants[내번호].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1684731456578" width="50px" alt="챔피언"></span> <div><span class="champ-level">Lv . ${게임.data.info.participants[내번호].champLevel}</span> <span class="multi-kill">${멀티킬}</span> <span class="rune"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perk/${게임.data.info.participants[내번호].perks.styles[0].selections[0].perk}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="40px" alt="룬1"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perkStyle/${게임.data.info.participants[내번호].perks.styles[1].style}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="30px" alt="룬2"></span></div>
+                    <div class="game-type"><span>${게임.data.info.gameMode}</span></div>
+                    <div class="champinfo"><div class="champion"><img src="https://opgg-static.akamaized.net/meta/images/lol/champion/${게임.data.info.participants[내번호].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1684731456578" width="48px" alt="챔피언"></div> <div class="champ-level"><span>Lv . ${게임.data.info.participants[내번호].champLevel}</span> <span class="multi-kill">${멀티킬}</span> <span class="rune"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perk/${게임.data.info.participants[내번호].perks.styles[0].selections[0].perk}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="40px" alt="룬1"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perkStyle/${게임.data.info.participants[내번호].perks.styles[1].style}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="30px" alt="룬2"></span></div></div>
                     <div><span class="game-kill">${게임.data.info.participants[내번호].kills}</span> <span> / </span> <span class="game-death">${게임.data.info.participants[내번호].deaths}</span> <span> / </span> <span class="game-assist">${게임.data.info.participants[내번호].assists}</span> <span> / </span> <span class="cs">CS - ${게임.data.info.participants[내번호].totalMinionsKilled}</span></div>
                 `
 
