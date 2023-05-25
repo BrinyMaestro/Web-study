@@ -7,26 +7,35 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="opgg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
     
 </head>
 <body>
     <div id="container">
-        <label for="" style="text-align: center;">유저 <input type="text" id="user" value="컵라면3분뉴스"></label> <button>검색</button>
+        <div class="head"><label for="" style="text-align: center;"><input type="text" id="user" value="컵라면3분뉴스"></label> <button>검색</button></div>
     
         <section class="profile1">
             <div class="profile2">
-                <div class="img"><img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon5766.jpg?image=q_auto,f_webp,w_auto&v=1684436046850" width="150px" alt="가붕이미지"></div>
+                <div class="img"><img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon5766.jpg?image=q_auto,f_webp,w_auto&v=1684436046850" width="100px" alt="가붕이미지"></div>
                 <div class="name">
                     <h2>가붕가붕가붕가붕</h2>
                     <h2>Level <span class="level"> 00</span></h2>
                 </div>
                 <div class="tier">
-                    <img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/4415894930323/Challenger_Emblem_2022.png" alt="">
                     <h2>챌</h2>
+                    <img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/4415894930323/Challenger_Emblem_2022.png" alt="">  
+                </div>
+                <div class="per">
                     <p>승률 <span class="percent">99</span>% (<span class="win">ㅇ</span>승 <span class="lose">ㅇ</span>패)</p>
                 </div>
             </div>
         </section>
+
+        <br>
+
+        
 
         <!-- 20개 게임 -->
         <div class="games">
@@ -39,14 +48,14 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         // summoner api로 유저 데이터를 가져오는 부분
-        const api키 = "RGAPI-4486b5e2-c32b-4990-9890-4f60b12afa6a"
+        const api키 = "RGAPI-959f0326-1ebc-4723-ba0b-d72e472fb471"
         let 검색할유저
         let 소환사puuid
         let 소환사id
         const 인풋태그 = document.querySelector("#user")
         const 검색버튼 = document.querySelector("button")
         const 티어 = document.querySelector(".tier h2")
-        const 승률 = document.querySelector(".tier .percent")
+        const 승률 = document.querySelector(".per .percent")
         const 승 = document.querySelector(".win")
         const 패 = document.querySelector(".lose")
         const 티어이미지 = document.querySelector(".tier img")
@@ -159,9 +168,20 @@
                 let 자식
                 자식 = document.createElement("div")
                 자식.classList.add("game")
-                자식.innerHTML = 
+
+                if (게임.data.info.participants[내번호].win == true ) {
+                    자식.innerHTML = `<div><span class="win-lose">승</span></div>`
+                }
+                else if (게임.data.info.participants[내번호].win == false ) {
+                    자식.innerHTML = `<div><span class="win-lose">패</span></div>`
+                }
+                else {
+                    자식.innerHTML = `<div><span class="win-lose">다시하기</span></div>`
+                }
+
+                자식.innerHTML = 자식.innerHTML +
                 `
-                    <div><span class="win-lose">${게임.data.info.participants[내번호].win}</span> <span class="game-type">${게임.data.info.gameMode}</span></div>
+                    <div><span class="game-type">${게임.data.info.gameMode}</span></div>
                     <span class="champion"><img src="https://opgg-static.akamaized.net/meta/images/lol/champion/${게임.data.info.participants[내번호].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1684731456578" width="50px" alt="챔피언"></span> <div><span class="champ-level">Lv . ${게임.data.info.participants[내번호].champLevel}</span> <span class="multi-kill">${멀티킬}</span> <span class="rune"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perk/${게임.data.info.participants[내번호].perks.styles[0].selections[0].perk}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="40px" alt="룬1"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perkStyle/${게임.data.info.participants[내번호].perks.styles[1].style}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="30px" alt="룬2"></span></div>
                     <div><span class="game-kill">${게임.data.info.participants[내번호].kills}</span> <span> / </span> <span class="game-death">${게임.data.info.participants[내번호].deaths}</span> <span> / </span> <span class="game-assist">${게임.data.info.participants[내번호].assists}</span> <span> / </span> <span class="cs">CS - ${게임.data.info.participants[내번호].totalMinionsKilled}</span></div>
                 `
