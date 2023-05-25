@@ -6,25 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
-        *{margin: 0; padding: 0; box-sizing: border-box;}
-        #container {width: 2000px; margin: 0 auto;}
-
-        .profile1 {border: 1px solid rgb(150, 150, 150);}
-        .profile2 {display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgb(150, 150, 150);}
-        .tier img {width: 100px;}
-        .tier p {display: flex;}
-        .profile3 {display: flex; justify-content: space-between;}
-        .kda20 {display: flex;}
-        .game {display: flex; justify-content:space-between;}
-        .game > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
-        .user1 { font-size: 5pt;}
-        .item2 {border: 1px solid rgb(150, 150, 150); height: 50px;}
-        .game2 {display: flex; justify-content:space-between; margin-top: -3px;}
-        .game2 > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
-    </style>
-
-
+    <link rel="stylesheet" href="opgg.css">
+    
 </head>
 <body>
     <div id="container">
@@ -179,7 +162,7 @@
                 자식.innerHTML = 
                 `
                     <div><span class="win-lose">${게임.data.info.participants[내번호].win}</span> <span class="game-type">${게임.data.info.gameMode}</span></div>
-                    <span class="champion"><img src="https://opgg-static.akamaized.net/meta/images/lol/champion/${게임.data.info.participants[내번호].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1684731456578" width="50px" alt="챔피언"></span> <div><span class="champ-level">Lv . ${게임.data.info.participants[내번호].champLevel}</span> <span class="multi-kill">${멀티킬}</span> <span class="rune"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perk/${게임.data.info.participants[내번호].perks.styles[0].selections[0].perk}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="20px" alt="룬1"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perkStyle/${게임.data.info.participants[내번호].perks.styles[1].style}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="20px" alt="룬2"></span></div>
+                    <span class="champion"><img src="https://opgg-static.akamaized.net/meta/images/lol/champion/${게임.data.info.participants[내번호].championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_96&v=1684731456578" width="50px" alt="챔피언"></span> <div><span class="champ-level">Lv . ${게임.data.info.participants[내번호].champLevel}</span> <span class="multi-kill">${멀티킬}</span> <span class="rune"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perk/${게임.data.info.participants[내번호].perks.styles[0].selections[0].perk}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="40px" alt="룬1"> <img src="https://opgg-static.akamaized.net/meta/images/lol/perkStyle/${게임.data.info.participants[내번호].perks.styles[1].style}.png?image=q_auto,f_webp,w_auto&v=1684731456578" width="30px" alt="룬2"></span></div>
                     <div><span class="game-kill">${게임.data.info.participants[내번호].kills}</span> <span> / </span> <span class="game-death">${게임.data.info.participants[내번호].deaths}</span> <span> / </span> <span class="game-assist">${게임.data.info.participants[내번호].assists}</span> <span> / </span> <span class="cs">CS - ${게임.data.info.participants[내번호].totalMinionsKilled}</span></div>
                 `
 

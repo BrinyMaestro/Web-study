@@ -1,0 +1,16 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+#container {width: 2000px; margin: 0 auto;}
+
+.profile1 {border: 1px solid rgb(150, 150, 150);}
+.profile2 {display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgb(150, 150, 150);}
+.tier img {width: 100px;}
+.tier p {display: flex;}
+.profile3 {display: flex; justify-content: space-between;}
+.kda20 {display: flex;}
+.game {display: flex; justify-content:space-between;}
+.game > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
+.user1 { font-size: 5pt;}
+.item2 {border: 1px solid rgb(150, 150, 150); height: 50px;}
+.game2 {display: flex; justify-content:space-between; margin-top: -3px;}
+.game2 > div {border: 2px solid rgb(150, 150, 150); flex: auto; display: flex; justify-content: space-around; align-items: center; height: 50px;}
+.rune {display: flex; justify-content: space-between; align-items: center;}
