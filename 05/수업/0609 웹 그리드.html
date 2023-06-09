@@ -8,11 +8,12 @@
 
     <style>
         .daddy {
+            height: 700px;
             border: 1px solid red;
             display: grid;
-            grid-template-columns: 200px 2fr 4fr;
-            grid-template-rows: 100px 200px 300px;
-            gap: 20px;
+            grid-template-columns:repeat(auto-fill, minmax(25%, auto));
+            grid-template-rows: repeat(3, 1fr);
+            /*gap: 20px;*/
 
             /*align-items: center;
             justify-items: center;*/
@@ -20,7 +21,7 @@
         .box {
             border: 1px solid blue;
         }
-        .box:nth-child(10) {background-color: yellow; grid-column: 1 / 4;}
+        /*.box:nth-child(10) {background-color: yellow; grid-column: 1 / 4;}*/
     </style>
 
 </head>
@@ -36,6 +37,8 @@
         <div class="box">박스8</div>
         <div class="box">박스9</div>
         <div class="box">박스10</div>
+        <div class="box">박스11</div>
+        <div class="box">박스12</div>
     </div>
 </body>
 </html>
