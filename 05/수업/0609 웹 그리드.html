@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .daddy {
+            border: 1px solid red;
+            display: grid;
+            grid-template-columns: 200px 2fr 4fr;
+            grid-template-rows: 100px 200px 300px;
+            gap: 20px;
+        }
+        .box {
+            border: 1px solid blue;
+        }
+        .box:nth-child(10) {background-color: yellow; grid-column: 1 / 4;}
+    </style>
+
 </head>
 <body>
-    
+    <div class="daddy">
+        <div class="box">박스1</div>
+        <div class="box">박스2</div>
+        <div class="box">박스3</div>
+        <div class="box">박스4</div>
+        <div class="box">박스5</div>
+        <div class="box">박스6</div>
+        <div class="box">박스7</div>
+        <div class="box">박스8</div>
+        <div class="box">박스9</div>
+        <div class="box">박스10</div>
+    </div>
 </body>
 </html>
