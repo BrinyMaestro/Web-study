@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜스폼과 트랜지션</title>
+
+    <style>
+        .box {width: 200px; height: 200px;}
+        /* 크기, 위치, 회전 */
+        .box1 {background-image: url('https://t1.daumcdn.net/cfile/tistory/9937AC3C5C2757FE22');background-size: cover; transition: 1s; background-color: rgb(255, 255, 0);}
+        .box1:hover{background-image: url('https://t1.daumcdn.net/cfile/tistory/9937AC3C5C2757FE22');background-size: cover; background-color: aqua; transform:translate(2000px) scale(0.5) rotate(300000deg);}
+
+        .box2 {background-color: crimson; transform: translate(100px, 100px);}
+        .box3 {background-color: yellowgreen; transform: rotate(10deg);} /* deg : degree 도*/
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"><h1>박스2</h1></div>
+    <div class="box box3"><h1>박스3</h1></div>
+</body>
+</html>
