@@ -22,7 +22,12 @@
         }, 3000 ) // 1000 : 1초
 
         console.log("setTimeout 이후에 실행하는 출력문")
-        // setInterval
+        // setInterval : 간격. 간격마다 반복해서 실행. 1초마다 반복실행,  2초마다 반복실행
+        // 사용법 : setInterval(함수, 시간)
+        function 셋인터벌() {
+            console.log("setInterval용 함수")
+        }
+        setInterval(셋인터벌, 1000)
 
     </script>
 </body>
