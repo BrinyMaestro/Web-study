@@ -5,29 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0630 타이머 다스리는 함수</title>
+
+    <style>
+        .box{
+            background-color: cadetblue;
+            width: 300px;
+            height: 300px;
+            font-size: 50pt;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="box">
+        0
+    </div>
 
     <script>
         // 두 종류 : setInterval   setTimeout
 
         // setTimeout : 카운트다운 한 후에 코드 실행
         // 사용법 : setTimeout(함수, 시간)
-
-        console.log("하하하 안녕 금요일")
+        let 박스 = document.querySelector(".box")
+        let num = 0
+        console.log("1. 하하하 안녕 금요일")
 
         setTimeout(function(){
-            console.log("몇 초 후에 실행")
+            console.log("2. 몇 초 후에 실행")
         }, 3000 ) // 1000 : 1초
 
-        console.log("setTimeout 이후에 실행하는 출력문")
+        console.log("3. setTimeout 이후에 실행하는 출력문")
         // setInterval : 간격. 간격마다 반복해서 실행. 1초마다 반복실행,  2초마다 반복실행
         // 사용법 : setInterval(함수, 시간)
         function 셋인터벌() {
             console.log("setInterval용 함수")
         }
-        setInterval(셋인터벌, 1000)
+        let 셋인터벌이저장된곳 = setInterval(셋인터벌, 1000)
+        console.log("어디에 있니", 셋인터벌이저장된곳)
 
     </script>
 </body>
