@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0706 매쓰 객체</title>
+</head>
+<body>
+    
+
+    <script>
+        // Math 객체
+        let 숫자 = 3.141592
+
+        console.log("ceiling 함수", Math.ceil(숫자)) // ceiling 천장 -> 위(올림)
+        console.log("floor 함수", Math.floor(숫자)) // floor 바닥 -> 밑(내림)
+        console.log("round 반올림", Math.round(3.6)) // 반올림
+        console.log("round 반올림", Math.round(3.1)) // 반올림
+        console.log("abs 절댓값", Math.abs(-3)) // 절댓값
+        console.log("sqrt 루트", Math.sqrt(64)) // 제곱근
+
+        console.log("random 숫자 랜덤으로 뽑아줌", Math.random())
+        console.log("0~10 사이의 수를 랜덤으로 뽑으려면?", Math.round(Math.random() * 10))
+        
+        // 주사위뽑기 만들기
+        // 1 ~ 6범위
+        let 주사위번호
+        // 주사위번호 = Math.random() * 6 // 0 <= x < 6의 범위가 나옴
+        주사위번호 = Math.floor(Math.random() * 6 + 1) // 1 <= x < 7의 범위가 나옴
+        console.log(주사위번호)
+
+    </script>
+</body>
+</html>
