@@ -1,0 +1,14 @@
+{
+  "name": "node_js_project_for_study",
+  "version": "1.0.0",
+  "description": "nodejs project for study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "phh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
