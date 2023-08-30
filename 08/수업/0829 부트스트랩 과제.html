@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container position-relative">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">타이탄s</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">아익</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">아이익</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">헤엑</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">끼릭끼릭</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-3 position-absolute end-0 w-25">
+                <h3 class="list-group m-2">메뉴</h3>
+                <div id="list-example" class="list-group m-2">
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">개고수 vs 족고수</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">타이탄</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">탄도미사일</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">타이탄 두마리</a>
+                </div>
+            </div>
+            <div class="col-9 mt-4 me-1">
+                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                    <h4 id="list-item-1">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://cdn.discordapp.com/attachments/551617825408679936/1145881448730083338/1693269768.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h2 class="card-title">개고수 vs 족고수</h2>
+                                <p class="card-text">둠피스트 vs 제라툴</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#M1">Go somewhere</a>
+                            </div>
+                        </div>
+                    </h4>
+    
+                    <h4 id="list-item-2">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://dcimg4.dcinside.co.kr/viewimage.php?id=29b8c332ecdc21&no=24b0d769e1d32ca73fea8efa11d028317044ef0bb41aaa70c68a363cd4e78bbcb7c7e443d424d33eb79fd5f97e4da79c7fad3b437c63dcce3d4c1ef964" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h2 class="card-title">타이탄</h2>
+                                <p class="card-text">테에엥</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#M2">Go somewhere</a>
+                            </div>
+                        </div>
+                    </h4>
+                    
+                    <h4 id="list-item-3">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://dcimg4.dcinside.co.kr/viewimage.php?id=29b8c332ecdc21&no=24b0d769e1d32ca73fea81fa11d028310bcfe0de5d45c4cda5ff06c6105d0122ede4339a2c1c1820bede51e681b07cd0383b61ec58341b468e2d27900b43" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h2 class="card-title">탄도미사일</h2>
+                                <p class="card-text">일단 움직임이 예사롭지 않은건 맞어</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#M3">Go somewhere</a>
+                            </div>
+                        </div>
+                    </h4>
+                    
+                    <h4 id="list-item-4">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://dcimg4.dcinside.co.kr/viewimage.php?id=29b8c332ecdc21&no=24b0d769e1d32ca73fea80fa11d02831568986a64e09a894bd12fbf50a317f643070f1fa7248effe620fee9c9ee0027371f3639449c4bed2d8c3eb291b0a4b" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h2 class="card-title">타이탄 두마리</h2>
+                                <p class="card-text">세상에</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#M4">Go somewhere</a>
+                            </div>
+                        </div>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="M1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">아이익</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>이걸사네</h3>
+                        
+                        <form class="d-flex my-3" role="search">
+                            주문하신 타이탄
+                            <input class="form-control w-50 mx-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                솔찍히
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">헌터라</a></li>
+                                <li><a class="dropdown-item" href="#">살았다</a></li>
+                                <li><a class="dropdown-item" href="#">ㅇㅈ?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="M2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">아이익</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>이걸사네</h3>
+                        
+                        <form class="d-flex my-3" role="search">
+                            주문하신 타이탄
+                            <input class="form-control w-50 mx-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                솔찍히
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">헌터라</a></li>
+                                <li><a class="dropdown-item" href="#">살았다</a></li>
+                                <li><a class="dropdown-item" href="#">ㅇㅈ?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="M4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">아이익</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>이걸사네</h3>
+                        
+                        <form class="d-flex my-3" role="search">
+                            주문하신 타이탄
+                            <input class="form-control w-50 mx-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                솔찍히
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">헌터라</a></li>
+                                <li><a class="dropdown-item" href="#">살았다</a></li>
+                                <li><a class="dropdown-item" href="#">ㅇㅈ?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

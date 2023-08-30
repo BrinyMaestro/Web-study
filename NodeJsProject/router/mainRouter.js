@@ -1,19 +1,22 @@
 const express = require("express")
 const router = express.Router()
 
-router.get('/', function(req, res) {
-    res.send("메인페이지")
+router.use(express.json())
+router.use(express.urlencoded())
+
+// app.get(주소 경로, 액션)
+router.get("/", function(req, res) { // req : request 유저들의 요청  res : response 유저들에게 응답
+    res.send(`홈페이지에 성공적으로 접속함`)
 })
 
-router.get('/about', function(req, res) {
-    res.send(`이름은 ${req.query.name}이고 종족은 ${req.query.race}입니다`)
-    console.log(req.query.name)
-    console.log(req.query.race)
-
+router.get("/about", function(req, res) {
+    res.send(`자기소개페이지 ${req.query.name} ${req.query.gender}`)
 })
 
-router.post("/about", function(req, res) {
-    console.log("포스트실행")
+router.post("/postapi", function(req, res) {
     console.log(req.body)
+    console.log(`글쓴이 : ${req.body.name} 내용 : ${req.body.content}`)
 })
+
+
 module.exports = router
