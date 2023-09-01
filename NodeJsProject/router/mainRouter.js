@@ -6,7 +6,7 @@ router.use(express.urlencoded())
 
 // app.get(주소 경로, 액션)
 router.get("/", function(req, res) { // req : request 유저들의 요청  res : response 유저들에게 응답
-    res.send(`홈페이지에 성공적으로 접속함`)
+    res.render('index')
 })
 
 router.get("/about", function(req, res) {
