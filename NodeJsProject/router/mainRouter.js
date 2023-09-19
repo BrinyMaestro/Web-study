@@ -6,7 +6,11 @@ router.use(express.urlencoded())
 
 // app.get(주소 경로, 액션)
 router.get("/", function(req, res) { // req : request 유저들의 요청  res : response 유저들에게 응답
-    res.render('index')
+    res.render('index', {champion : "세트", message: "버프좀"})
+})
+
+router.get('/moon', function(req, res) {
+    res.render('moon')
 })
 
 router.get("/about", function(req, res) {
