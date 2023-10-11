@@ -1,26 +1,21 @@
-// 1. 설치한다
-// 2. 설치한걸 사용하겠다고 코드를 쓴다
+const express = require('express') // express 를 가져오는 역할
+const app = express() // 가져온 express를 생성하여 변수에 저장
 
-const express = require("express") // express 패키지에 대한 정보를 변수에 집어넣음.
-const app = express() // 가져온 패키지를 실제로 사용하겠다는 선언
-const helmet = require("helmet")
-app.use(helmet())
+const helmet = require('helmet') // helmet 가져오기
+app.use(helmet()) // express에다가 helmet 추가
 
-// app.set() 은 익스프레스에서 설정을 바꾸는 함수
-app.set('view engine', 'ejs') // ejs 쓰겠다는 선언
-app.set('views', './views') // 앞의 views : 익스프레스의 설정키. ejs 파일이 있는 경로를 설정.
+const mainRouter = require('./router/mainRouter')
+app.use('/', mainRouter)
 
-app.use('/public', express.static( __dirname + '/public'));
-// __dirname  : 현재 프로젝트 위치.
-// + '/public' : 현재 위치 기준으로 public 폴더의 위치를 찾아가라 라는 뜻.
+app.set('view engine', 'ejs')
+app.set('veiws', './views')
+app.use('/public', express.static(__dirname + '/public'))
 
-//const ejs = require('ejs')
-//app.use(ejs())
+const db = require('./model/db')
 
-const mainRouter = require("./router/mainRouter") // 라우터 정보를 mainRouter.js 에서 가져옴
-app.use("/", mainRouter)
+app.listen(5000, function() { // 포트번호는 3000
+    console.log("트릭컬은...서비스 종료다...")
 
-// app.listen( 포트번호, 액션 )
-app.listen(3000, function() {
-    console.log('hello world')
+    db.sequelize.sync({force:false})
+    console.log('db 실행 함')
 })
